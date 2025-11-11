@@ -1,10 +1,94 @@
 {
-    "accept post data": {
-        "prefix": "post",
-        "body": [
-            "ok, r = x.ajax_decode(request)",
-            "if not ok:",
-            "\treturn r"
+"accept post data": {
+    "prefix": "post",
+    "body": [
+        "ok, r = x.ajax_decode(request)",
+        "if not ok:",
+        "\treturn r"
+    ]
+},
+"accept post data": {
+    "prefix": "post",
+    "body": [
+        "ok, r = x.ajax_decode(request)",
+        "if not ok:",
+        "\treturn r"
         ]
-    }
+    },
+"import common": {
+    "prefix": "imptc",
+    "body": ["from apps.utils import common as c"]
+},
+"import ajax": {
+    "prefix": "imptx",
+    "body": ["from apps.utils import ajax as x"]
+},
+"import log": {
+    "prefix": "imptl",
+    "body": ["from apps.utils.log import log_exc,log_error,log_event"]
+},
+"import require": {
+    "prefix": "imptr",
+    "body": ["from apps.utils.require import require_method,require_role,require_login"]
+},
+"import settings": {
+    "prefix": "impts",
+    "body": ["from django.conf import settings"]
+},
+"import decimal": {
+    "prefix": "imptd",
+    "body": ["from decimal import Decimal"]
+},
+"import all": {
+    "prefix": "impt*",
+    "body": ["from . import * # noqa"]
+},
+"log error": {
+    "prefix": "loge",
+    "body": ["log_error()"]
+},
+"for loop": {
+    "prefix": "pfor",
+    "body": ["for vd in vds:"]
+},
+"post decode 1": {
+    "prefix": "p1",
+    "body": ["ok,r = x.ajax_decode(request)"]
+},
+"post decode 2": {
+    "prefix": "p2",
+    "body": ["if not ok:"]
+},
+"post decode 3": {
+    "prefix": "p3",
+    "body": ["    return r"]
+},
+"require login decorator": {
+    "prefix": "@l",
+    "body": ["@require_login"]
+},
+"require role decorator": {
+    "prefix": "@r",
+    "body": ["@require_role('')"]
+},
+"require method decorator": {
+    "prefix": "@m",
+    "body": ["@require_method('POST')"]
+},
+"log event decorator": {
+    "prefix": "@e",
+    "body": ["@log_event('')"]
+},
+"import sql": {
+    "prefix": "sqli",
+    "body": ["from apps.utils.sql import select_by_raw_sql,exec_by_raw_sql"]
+},
+"sql select": {
+    "prefix": "sqls",
+    "body": ["rs = select_by_raw_sql(sql)"]
+},
+"sql execute": {
+    "prefix": "sqle",
+    "body": ["ok = exec_by_raw_sql(sql)"]
+ }
 }
