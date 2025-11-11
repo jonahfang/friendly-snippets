@@ -1,0 +1,6 @@
+{
+    "uuid": {
+        "prefix": "uuid",
+        "body": "${UUID}"
+    }
+}
