@@ -1,43 +1,39 @@
 {
-    "ExtJS.func": {
-        "prefix": "func",
-        "body": ["${1}: function () {", "    // $0", "},"]
-    },
     "style": {
         "prefix": "style",
         "body": ["style={{$0}}"]
     },
     "onClick": {
-        "prefix": "onc",
+        "prefix": "onclick",
         "body": ["onClick={$0}"]
     },
-    "arrow-function-0": {
-        "prefix": "fn-const=>",
-        "body": ["const ${1} = () => {", "    $0", "}"]
+    "function-0": {
+        "prefix": "fnconst=>",
+        "body": ["const $0 = () => {", "    ", "}"]
     },
-    "arrow-function-1": {
-        "prefix": "fn-var",
-        "body": ["var ${1:f} = function() {", "    $0", "}"]
+    "function-1": {
+        "prefix": "fnvar",
+        "body": ["var $0 = function() {", "    ", "}"]
     },
-    "arrow-function-2": {
-        "prefix": "fn-method",
-        "body": ["${1:f} : function() {", "    $0", "}"]
+    "function-2": {
+        "prefix": "fnmethod",
+        "body": ["$0 : function() {", "    ", "}"]
     },
-    "arrow-function-3": {
-        "prefix": "fn-=>",
-        "body": ["(${1}) => {$0}"]
+    "function-3": {
+        "prefix": "fnarrow",
+        "body": ["($0) => {}"]
     },
     "if-statement": {
-        "prefix": "if-only",
-        "body": ["if (${1}) {", "    $0", "}"]
+        "prefix": "ifonly",
+        "body": ["if ($0) {", "    ", "}"]
     },
     "if-else-statement": {
-        "prefix": "if-else",
-        "body": ["if (${1}) {", "    $2", "} else {", "    $0", "}"]
+        "prefix": "ifelse",
+        "body": ["if ($0) {", "    ", "} else {", "    ", "}"]
     },
     "if-else-if-statement": {
-        "prefix": "if-elif",
-        "body": ["if (${1}) {", "    $2", "} else if (${3}) {", "    $0", "}"]
+        "prefix": "ifelif",
+        "body": ["if ($0) {", "    ", "} else if () {", "    ", "}"]
     },
     "default-state": {
         "prefix": "defstate",
@@ -49,11 +45,11 @@
     },
     "use-set-state": {
         "prefix": "usestate",
-        "body": ["const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useSetState(defaultState)"]
+        "body": ["const [$0,  }] = useSetState(defaultState)"]
     },
     "use-ref": {
         "prefix": "useref",
-        "body": ["const ${1} = useRef($0)"]
+        "body": ["const $0 = useRef()"]
     },
     "use-this": {
         "prefix": "usethis",
@@ -65,35 +61,31 @@
     },
     "use-defer-callback": {
         "prefix": "usedefercall",
-        "body": ["const deferCallback = useDeferCallback()", "", "deferCallback(() => {", "    ${1:popRef}.current.show()", "})"]
+        "body": ["const deferCallback = useDeferCallback()", "", "deferCallback(() => {", "    $0.current.show()", "})"]
     },
     "map-loop": {
         "prefix": "maploop",
-        "body": ["{${1:items}.map((${2:item}) => (", "    $0", "))}"]
+        "body": ["{$0.map((item) => (", "    ", "))}"]
     },
     "for-loop": {
-        "prefix": "for-var",
-        "body": ["for (var i = 0; i < ${1:rows}.length; i++) {", "    var ${2:item} = ${1}[i]", "    $0", "}"]
+        "prefix": "forvar",
+        "body": ["for (var i = 0; i < $0rows.length; i++) {", "    var item = row[i]", "    ", "}"]
     },
     "forEach-loop": {
-        "prefix": "for-each",
-        "body": ["${1:rows}.forEach((${2:row}) => {", "    $0", "})"]
-    },
-    "object-separator": {
-        "prefix": "sep",
-        "body": ["}, {"]
+        "prefix": "foreach",
+        "body": ["$0.forEach((row) => {", "    ", "})"]
     },
     "console-log": {
         "prefix": "cons",
         "body": ["console.log($0)"]
     },
     "convert-function": {
-        "prefix": "cvt-rec",
-        "body": ["convert : function(${1:v}, ${2:rec}) {", "    $0", "}"]
+        "prefix": "cvtrec",
+        "body": ["convert : function(v, rec}) {", "    return $0", "}"]
     },
     "convert-function-2": {
-        "prefix": "cvt-v",
-        "body": ["convert : function(${1:vc}) {", "    $0", "}"]
+        "prefix": "cvtv",
+        "body": ["convert : function(v) {", "    return $0", "}"]
     },
     "me-this": {
         "prefix": "methis",
@@ -101,6 +93,6 @@
     },
     "my-id": {
         "prefix": "myid",
-        "body": ["id : me.myId('${1:list}')"]
+        "body": ["id : me.myId('$0')"]
     }
 }
